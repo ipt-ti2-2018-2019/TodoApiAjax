@@ -1,0 +1,15 @@
+version: "3"
+volumes:
+    db-data: {}
+services:
+    # Docs: https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-docker?view=sql-server-2017
+    db:
+        image: "mcr.microsoft.com/mssql/server:2017-latest-ubuntu"
+        environment:
+            ACCEPT_EULA: "Y"
+            SA_PASSWORD: "TodoApp-ipt-2019"
+            MSSQL_PID: "Developer"
+        ports:
+            - "1433:1433"
+        volumes:
+            - "db-data:/var/opt/mssql"
