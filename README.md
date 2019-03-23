@@ -12,7 +12,7 @@ Opcionalmente, esta API pode ser executada localmente.
 
 Para usar localmente, é preciso ter um SQL Server, ou um SQL Server Local DB. Deve-se editar o ficheiro `appsettings.json` e mudar a connection string `TodoDb` para algo como:
 
-```json
+```jsonc
 {
     "ConnectionStrings": {
         "TodoDb": "Server=(localdb)\\mssqllocaldb;Database=TodoApi;Integrated Security=True"
@@ -48,7 +48,7 @@ Tem-se os seguintes "users":
 
 Esta API lida com tarefas (TODOs). O modelo de dados de cada tarefa é:
 
-```json
+```jsonc
 {
     "id": 1, // ID da tarefa (long, obrigatório, PK)
     "description": "Olá, Mundo!", // Descrição da tarefa (string, obrigatório, máx. 512 chars)
@@ -82,7 +82,7 @@ Os parâmetros `description` e `completed` são cumulativos, isto é, o seguinte
 
 -   O array das tarefas do utilizador. Se o utilizador não tiver tarefas, ou não existir nenhuma tarefa que corresponde aos parâmetros opcionais, este array vem vazio.
 
-```json
+```jsonc
 [
     {
         "id": 1,
@@ -112,7 +112,7 @@ Cria uma tarefa na base de dados para esse utilizador.
 -   Username, no URL (substituir `{user}` pelo user pretendido)
 -   Dados, no body, como JSON:
 
-```json
+```jsonc
 {
     "description": "Nova tarefa a ser criada" // Descrição da tarefa (string, obrigatório, máx. 512 chars)
 }
@@ -122,7 +122,7 @@ Cria uma tarefa na base de dados para esse utilizador.
 
 -   Objeto da tarefa criada, como JSON, com o ID, informação do user e datas de criação.
 
-```json
+```jsonc
 {
     "id": 2,
     "description": "Nova tarefa a ser criada",
@@ -143,7 +143,7 @@ Atualiza uma tarefa na base de dados, dado o utilizador e o ID da tarefa. Este m
 -   ID da tarefa, no URL (substituir `{id}` pelo ID pretendido)
 -   Dados da tarefa, no body, como JSON:
 
-```json
+```jsonc
 {
     "description": "Tarefa editada", // Descrição da tarefa (string, obrigatório, máx. 512 chars)
     "isComplete": true // Se está completo, ou não (boolean, obrigatório)
@@ -155,7 +155,7 @@ Atualiza uma tarefa na base de dados, dado o utilizador e o ID da tarefa. Este m
 -   Objeto da tarefa editada, como JSON, com os dados alterados.
 -   Se a tarefa não existir, ou não for do user: 404 (Not Found)
 
-```json
+```jsonc
 {
     "id": 2,
     "description": "Tarefa editada",
