@@ -4,11 +4,11 @@ Uma API de TODOs para usar nas aulas, de forma a explicar os conceitos de AJAX.
 
 ## Como usar
 
-Esta API vai estar disponível num servidor (ainda a definir).
+Esta API está disponível no seguinte link: https://ipt-ti2-todo.azurewebsites.net/.
 
-Opcionalmente, esta API pode ser executada localmente.
+Opcionalmente, esta API pode ser executada localmente (ver secção "Executar localmente").
 
-### Localmente
+### Executar localmente
 
 Para usar localmente, não é preciso uma base de dados. A desvantagem é que, de cada vez que a aplicação reinicia, os dados perdem-se.
 
@@ -40,7 +40,7 @@ Na pasta onde está o ficheiro `TodoApi.csproj`. A aplicação fica a correr no 
 
 ## Acessos
 
-Esta aplicação não tem autenticação. No entanto, implementa uma forma _whitelist_ rudimentar (por favor, não façam isto em produção), no ficheiro `Data/TodoAppUser.cs`. Se o número de aluno não está na lista, deve ser adicionado.
+Esta aplicação não tem autenticação. No entanto, implementa uma _whitelist_ rudimentar (por favor, não façam isto em produção!), no ficheiro `Data/TodoAppUser.cs`. Se o número de aluno não está na lista, deve ser adicionado.
 
 Tem-se os seguintes "users":
 
