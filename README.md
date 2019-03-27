@@ -10,7 +10,9 @@ Opcionalmente, esta API pode ser executada localmente.
 
 ### Localmente
 
-Para usar localmente, é preciso ter um SQL Server, ou um SQL Server Local DB. Deve-se editar o ficheiro `appsettings.json` e mudar a connection string `TodoDb` para algo como:
+Para usar localmente, não é preciso uma base de dados. A desvantagem é que, de cada vez que a aplicação reinicia, os dados perdem-se.
+
+É possível configurar também a aplicação para usar um SQL Server, ou um SQL Server Local DB. Deve-se editar o ficheiro `appsettings.json` e mudar a connection string `TodoDb` para algo como:
 
 ```jsonc
 {
@@ -21,6 +23,8 @@ Para usar localmente, é preciso ter um SQL Server, ou um SQL Server Local DB. D
 ```
 
 Para usar Local DB (como nas aulas do professor José Casimiro).
+
+É também necessário editar o ficheiro `Startup.cs` para ativar a opção `UseSqlServer` e comentar a opção `UseInMemoryDatabase`.
 
 Depois, pode-se iniciar o projeto.
 
