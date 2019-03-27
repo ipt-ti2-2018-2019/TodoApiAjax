@@ -29,10 +29,15 @@ namespace TodoApi
             // Adicionar ligação à BD
             services.AddDbContext<TodoDbContext>(dbOptions =>
             {
-                // Configurar ligação para usar SQL Server
+                // Por questões de desenvolvimento, usa-se uma BD local.
+                dbOptions.UseInMemoryDatabase("TodoDb");
+
+                // Configurar ligação para usar SQL Server (trocar a linha acima por esta se se quiser usar SQL Server)
+                // dbOptions.UseSqlServer(Configuration.GetConnectionString("TodoDb"));
+
                 // Outras ligações: https://docs.microsoft.com/en-gb/ef/core/providers/
                 // - Ex (MySQL): https://www.nuget.org/packages/MySql.Data.EntityFrameworkCore
-                dbOptions.UseSqlServer(Configuration.GetConnectionString("TodoDb"));
+                // - https://dev.mysql.com/doc/connector-net/en/connector-net-entityframework-core.html
             });
 
             services.AddMvc()
