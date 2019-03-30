@@ -16,6 +16,9 @@ namespace TodoApi.Controllers
         public TodosController(TodoDbContext db)
         {
             this.db = db;
+
+            // Certificar que a BD está criada--só necessário com BDs em memória.
+            this.db.Database.EnsureCreated();
         }
 
         [HttpGet("{user}")]

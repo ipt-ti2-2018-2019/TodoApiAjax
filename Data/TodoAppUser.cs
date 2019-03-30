@@ -8,7 +8,7 @@ namespace TodoApi.Data
     {
         public static bool IsAllowed(string userName) => AllowedUsers.Contains(userName);
 
-        private static ICollection<string> AllowedUsers = new HashSet<string>(
+        public static ICollection<string> AllowedUsers = new HashSet<string>(
             new List<string>
             {
                 "afecarvalho",
