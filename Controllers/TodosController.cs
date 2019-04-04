@@ -56,6 +56,8 @@ namespace TodoApi.Controllers
 
             var todo = new Todo
             {
+                // Don't do this at home!
+                Id = db.Todos.Max(t => t.Id) + 1,
                 AddedAt = DateTimeOffset.Now,
                 LastUpdatedAt = DateTimeOffset.Now,
                 IsComplete = false,
